@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Insurance Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" type="application/javascript"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Decentralized Insurance</div>
+            <div class="nav-links">
+                <a href="#" class="active" data-page="home">Home</a>
+                <a href="#" data-page="policies">View Policies</a>
+                <a href="#" data-page="my-policies">My Policies</a>
+                <a href="#" data-page="submit-claim">Submit Claim</a>
+                <a href="#" data-page="admin" class="admin-only">Admin Panel</a>
+            </div>
+            <button id="connectWallet" class="connect-wallet">Connect Wallet</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>Welcome to Decentralized Insurance</h1>
+                <p>Secure, transparent, and automated insurance powered by blockchain technology.</p>
+                <button id="getStarted" class="cta-button">Get Started</button>
+            </div>
+        </section>
+
+        <!-- View Policies Page -->
+        <section id="policies" class="page">
+            <h2>Available Insurance Policies</h2>
+            <div id="policiesList" class="policies-grid"></div>
+        </section>
+
+        <!-- My Policies Page -->
+        <section id="my-policies" class="page">
+            <h2>My Insurance Policies</h2>
+            <div id="myPoliciesList" class="policies-grid"></div>
+        </section>
+
+        <!-- Submit Claim Page -->
+        <section id="submit-claim" class="page">
+            <h2>Submit a Claim</h2>
+            <form id="claimForm" class="claim-form">
+                <div class="form-group">
+                    <label for="policySelect">Select Policy:</label>
+                    <select id="policySelect" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="claimReason">Reason for Claim:</label>
+                    <textarea id="claimReason" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Claim</button>
+            </form>
+        </section>
+
+        <!-- Admin Panel Page -->
+        <section id="admin" class="page">
+            <h2>Admin Panel</h2>
+            <div class="admin-controls">
+                <button id="createPolicyBtn" class="admin-button">Create New Policy</button>
+                <button id="withdrawFundsBtn" class="admin-button">Withdraw Funds</button>
+            </div>
+            <div class="claims-section">
+                <h3>Pending Claims</h3>
+                <div id="claimsList" class="claims-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Create Policy Modal -->
+    <div id="createPolicyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Policy</h2>
+            <form id="createPolicyForm">
+                <div class="form-group">
+                    <label for="policyName">Policy Name:</label>
+                    <input type="text" id="policyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="coverageAmount">Coverage Amount (ETH):</label>
+                    <input type="number" id="coverageAmount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="premiumAmount">Premium Amount (ETH):</label>
+                    <input type="number" id="premiumAmount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (days):</label>
+                    <input type="number" id="duration" required>
+                </div>
+                <button type="submit" class="submit-button">Create Policy</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
