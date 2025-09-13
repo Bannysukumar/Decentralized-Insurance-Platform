@@ -35,13 +35,65 @@
         <!-- View Policies Page -->
         <section id="policies" class="page">
             <h2>Available Insurance Policies</h2>
+            <div class="policies-info">
+                <p>Choose from our comprehensive insurance policies. All policies are backed by smart contracts for transparency and security.</p>
+            </div>
             <div id="policiesList" class="policies-grid"></div>
         </section>
 
         <!-- My Policies Page -->
         <section id="my-policies" class="page">
-            <h2>My Insurance Policies</h2>
-            <div id="myPoliciesList" class="policies-grid"></div>
+            <h2>My Insurance Dashboard</h2>
+            
+            <!-- User Statistics -->
+            <div class="user-stats">
+                <div class="stat-card">
+                    <h3>My Policies</h3>
+                    <p id="userPolicyCount">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Claims</h3>
+                    <p id="userActiveClaims">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Claims</h3>
+                    <p id="userTotalClaims">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Account Balance</h3>
+                    <p id="userBalance">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="user-tabs">
+                <button id="myPoliciesTab" class="tab-btn active">My Policies</button>
+                <button id="myClaimsTab" class="tab-btn">My Claims</button>
+                <button id="myTransactionsTab" class="tab-btn">Transaction History</button>
+            </div>
+            
+            <!-- My Policies Tab -->
+            <div id="myPoliciesContent" class="tab-content active">
+                <h3>My Insurance Policies</h3>
+                <div id="myPoliciesList" class="policies-grid"></div>
+            </div>
+            
+            <!-- My Claims Tab -->
+            <div id="myClaimsContent" class="tab-content">
+                <h3>My Claims History</h3>
+                <div class="claims-filter">
+                    <button id="showAllMyClaims" class="filter-btn active">All Claims</button>
+                    <button id="showPendingMyClaims" class="filter-btn">Pending</button>
+                    <button id="showApprovedMyClaims" class="filter-btn">Approved</button>
+                    <button id="showRejectedMyClaims" class="filter-btn">Rejected</button>
+                </div>
+                <div id="myClaimsList" class="claims-grid"></div>
+            </div>
+            
+            <!-- Transaction History Tab -->
+            <div id="myTransactionsContent" class="tab-content">
+                <h3>Transaction History</h3>
+                <div id="myTransactionsList" class="transactions-grid"></div>
+            </div>
         </section>
 
         <!-- Submit Claim Page -->
@@ -63,13 +115,49 @@
         <!-- Admin Panel Page -->
         <section id="admin" class="page">
             <h2>Admin Panel</h2>
+            
+            <!-- Admin Statistics -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Contract Balance</h3>
+                    <p id="contractBalance">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Policies</h3>
+                    <p id="totalPolicies">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Claims</h3>
+                    <p id="totalClaims">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Claims</h3>
+                    <p id="pendingClaims">Loading...</p>
+                </div>
+            </div>
+            
             <div class="admin-controls">
                 <button id="createPolicyBtn" class="admin-button">Create New Policy</button>
                 <button id="withdrawFundsBtn" class="admin-button">Withdraw Funds</button>
+                <button id="refreshDataBtn" class="admin-button">Refresh Data</button>
             </div>
+            
+            <!-- All Policies Management -->
+            <div class="policies-section">
+                <h3>All Policies</h3>
+                <div id="allPoliciesList" class="policies-grid"></div>
+            </div>
+            
+            <!-- All Claims History -->
             <div class="claims-section">
-                <h3>Pending Claims</h3>
-                <div id="claimsList" class="claims-grid"></div>
+                <h3>All Claims History</h3>
+                <div class="claims-filter">
+                    <button id="showAllClaims" class="filter-btn active">All Claims</button>
+                    <button id="showPendingClaims" class="filter-btn">Pending</button>
+                    <button id="showApprovedClaims" class="filter-btn">Approved</button>
+                    <button id="showRejectedClaims" class="filter-btn">Rejected</button>
+                </div>
+                <div id="allClaimsList" class="claims-grid"></div>
             </div>
         </section>
     </main>

@@ -223,10 +223,38 @@ main {
 }
 
 /* Admin Panel */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
 .admin-controls {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .admin-button {
@@ -241,6 +269,37 @@ main {
 
 .admin-button:hover {
     background-color: #34495e;
+}
+
+.policies-section {
+    margin-bottom: 2rem;
+}
+
+.claims-filter {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #ecf0f1;
+    color: var(--text-color);
+    border: 1px solid #bdc3c7;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #d5dbdb;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
 }
 
 .claims-grid {
@@ -324,6 +383,31 @@ main {
     color: white;
 }
 
+.status-claim-approved {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-claim-rejected {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.status-claim-pending {
+    background-color: var(--warning-color);
+    color: #000;
+}
+
+.status-active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.status-expired {
+    background-color: #95a5a6;
+    color: white;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -361,4 +445,138 @@ main {
         margin: 20% auto;
         width: 90%;
     }
+}
+
+/* User Dashboard */
+.user-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: var(--secondary-color);
+    background-color: #f8f9fa;
+}
+
+.tab-btn.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.policies-info {
+    background-color: #e8f4fd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.policies-info p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.transactions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.transaction-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.transaction-card.purchase {
+    border-left-color: var(--success-color);
+}
+
+.transaction-card.claim {
+    border-left-color: var(--warning-color);
+}
+
+.transaction-card.approved {
+    border-left-color: var(--success-color);
+}
+
+.transaction-card.rejected {
+    border-left-color: var(--error-color);
+}
+
+.transaction-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.transaction-details p {
+    margin: 0.25rem 0;
+    color: var(--text-color);
+}
+
+.transaction-amount {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Loading and Status Messages */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.no-policies {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    text-align: center;
+    padding: 2rem;
+    color: var(--error-color);
+    font-size: 1.1rem;
+    background-color: #ffeaea;
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 } 
